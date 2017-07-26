@@ -12,26 +12,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="member_info.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch03/classfile/member_info.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constant_pool.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ch03/classfile/constant_pool.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="41" column="23" lean-forward="false" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="constant_info.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch03/classfile/constant_info.go">
           <provider selected="true" editor-type-id="text-editor">
@@ -106,11 +86,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cp_member_ref.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cp_member_ref.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ch03/classfile/cp_member_ref.go">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
               <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AttributeInfo.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ch03/classfile/AttributeInfo.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="630">
+              <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attr_unparsed.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ch03/classfile/attr_unparsed.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -161,6 +161,8 @@
         <option value="$PROJECT_DIR$/src/ch03/classfile/cp_class.go" />
         <option value="$PROJECT_DIR$/src/ch03/classfile/cp_name_and_type.go" />
         <option value="$PROJECT_DIR$/src/ch03/classfile/cp_member_ref.go" />
+        <option value="$PROJECT_DIR$/src/ch03/classfile/AttributeInfo.go" />
+        <option value="$PROJECT_DIR$/src/ch03/classfile/attr_unparsed.go" />
       </list>
     </option>
   </component>
@@ -191,6 +193,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,8 +263,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -403,24 +405,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ch03/classfile/constant_info.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="27" lean-forward="false" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/hello_world.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="25" column="39" lean-forward="false" selection-start-line="25" selection-start-column="39" selection-end-line="25" selection-end-column="39" />
-          <folding>
-            <element signature="e#14#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ch03/classfile/cp_numeric.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -467,7 +451,7 @@
         <state relative-caret-position="1458">
           <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="33" />
           <folding>
-            <element signature="e#19#31#0" expanded="true" />
+            <element signature="e#19#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -528,7 +512,7 @@
         <state relative-caret-position="1458">
           <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="33" />
           <folding>
-            <element signature="e#19#31#0" expanded="true" />
+            <element signature="e#19#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -569,7 +553,7 @@
         <state relative-caret-position="1458">
           <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="33" />
           <folding>
-            <element signature="e#19#31#0" expanded="true" />
+            <element signature="e#19#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -594,7 +578,7 @@
         <state relative-caret-position="1764">
           <caret line="98" column="25" lean-forward="false" selection-start-line="98" selection-start-column="25" selection-end-line="98" selection-end-column="25" />
           <folding>
-            <element signature="e#19#31#0" expanded="true" />
+            <element signature="e#19#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -692,7 +676,7 @@
         <state relative-caret-position="1458">
           <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="29" selection-end-line="81" selection-end-column="33" />
           <folding>
-            <element signature="e#19#31#0" expanded="true" />
+            <element signature="e#19#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -784,6 +768,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch03/classfile/AttributeInfo.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="35" column="38" lean-forward="false" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ch03/classfile/attr_unparsed.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
