@@ -1,6 +1,6 @@
 package classfile
 
-type ConstantPool []constantInfo
+type ConstantPool []ConstantInfo
 
 func readConstantPool(reader *ClassReader) ConstantPool {
 	cpCount := int(reader.readUint16())
@@ -9,7 +9,7 @@ func readConstantPool(reader *ClassReader) ConstantPool {
 	for i:= 1; i < cpCount; i ++ {  //索引从1开始
 		cp[i] = readConstantInfo(reader, cp)
 		switch cp[i].(type) {
-		case *ConstantLongInfo, *ConstantLongInfo:
+		case *ConstantLongInfo, *ConstantDoubleInfo:
 			i ++ //占两个位置
 		}
 	}

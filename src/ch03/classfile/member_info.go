@@ -1,7 +1,5 @@
 package classfile
 
-import "ch03/classfile"
-
 type MemberInfo struct {
 	cp ConstantPool
 	accessFlags uint16
@@ -19,7 +17,7 @@ func readMembers(reader *ClassReader, cp ConstantPool) []*MemberInfo {
 	return members
 }
 
-func readMember(reader *ClassReader, cp ConstantPoll) *MemberInfo {
+func readMember(reader *ClassReader, cp ConstantPool) *MemberInfo {
 	return &MemberInfo{
 		cp: cp,
 		accessFlags: reader.readUint16(),

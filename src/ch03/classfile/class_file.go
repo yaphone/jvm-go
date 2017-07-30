@@ -17,6 +17,7 @@ type ClassFile struct {
 }
 
 func Parse(classData []byte) (cf *ClassFile, err error){
+	//fmt.Printf("\n*********************\n")
 	defer func(){
 		if r := recover(); r != nil{
 			var ok bool;
@@ -30,6 +31,7 @@ func Parse(classData []byte) (cf *ClassFile, err error){
 	cr := &ClassReader{classData}
 	cf = &ClassFile{}
 	cf.read(cr)
+	//fmt.Printf("\n*********************\n")
 	return
 }
 
@@ -42,6 +44,7 @@ func (self *ClassFile) read(reader *ClassReader) {
 	self.superClass = reader.readUint16()
 	self.interfaces = reader.readUint16s()
 	self.fields = readMembers(reader, self.constantPool)
+	self.methods = readMembers(reader, self.constantPool)
 	self.attributes = readAttributes(reader, self.constantPool)
 }
 
@@ -83,7 +86,7 @@ func (self *ClassFile) AccessFlags() uint16 {
 	return self.accessFlags
 }
 
-func (self *ClassFile) Filed() []*MemberInfo {
+func (self *ClassFile) Fileds() []*MemberInfo {
 	return self.fields
 }
 
@@ -97,7 +100,7 @@ func (self *ClassFile) ClassName() string {
 }
 
 //从常量池中查找超类名
-func (self *ClassFile) superClassName() string {
+func (self *ClassFile) SuperClassName() string {
 	if self.superClass > 0 {
 		return self.constantPool.getClassName(self.superClass)
 	}
@@ -105,7 +108,7 @@ func (self *ClassFile) superClassName() string {
 }
 
 //从常量池中查找接口名
-func (self *ClassFile) interfaceNames() []string {
+func (self *ClassFile) InterfaceNames() []string {
 	interfaceNames := make([]string, len(self.interfaces))
 	for i, cpIndex := range self.interfaces{
 		interfaceNames[i] = self.constantPool.getClassName(cpIndex)
